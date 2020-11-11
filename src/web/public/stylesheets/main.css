@@ -1,0 +1,21 @@
+body {
+    background-color: #3f3f3f;
+    color: #fafafa;
+    font-family: 'Cairo', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #fafafa;
+}
+
+@media only screen and (min-width:0px) and (max-width:1024px) {
+    #no-body {
+        display: block !important;
+        padding: 50px;
+        justify-content: center;
+        margin-top: 10%;
+    }
+    #main-container {
+        display: none;    
+    }
+}

@@ -1,0 +1,115 @@
+<%- include('partials/header') -%>
+<link rel="stylesheet" href="/stylesheets/index.css">
+
+<body>
+    <!-- Main Body -->
+    <div id="main-container">
+        <!-- Navbar -->
+        <div id="container-topNavBar">
+            <nav class="navbar navbar-expand-lg" id="topNavBar">
+                <a class="navbar-brand" href="#">Greench Pre-Alpha&nbsp;&nbsp;<span id="brand-sep">&nbsp;</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        &nbsp;
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">
+                                <i class="fas fa-home"></i>&nbsp; Home <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        &nbsp;&nbsp;
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-plus"></i>&nbsp; Invite Me
+                            </a>
+                        </li>
+                        &nbsp;&nbsp;
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-exclamation-circle"></i>&nbsp; Disclaimer
+                            </a>
+                        </li>
+                        &nbsp;&nbsp;
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fab fa-discord"></i>&nbsp; Discord
+                            </a>
+                        </li>
+                        &nbsp;&nbsp;
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-cogs"></i>&nbsp; Dashboard
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><i class="fas fa-sign-in-alt"></i>&nbsp;Alpha Test</button> -->
+                    &nbsp;&nbsp;
+                    <form class="form-inline my-2 my-lg-0" action="/auth">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="topNavButton"><i class="fas fa-sign-in-alt"></i>&nbsp;LOGIN</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+
+        <div id="body">
+            <div id="main-body">
+                <p>
+                    <br>
+                    <h1 style="font-weight: bold;">Your Community Platform for <span style="color: #00c5f6;">Greench Pre-Alpha</span></h1>
+                    <h5><i><u>A Greenchs's Development Software</u></i></h5>
+                </p>
+            </div>
+            <br>
+            <!-- Below Header -->
+            <div id="body2">
+                <!-- Main Cards -->
+                <div class="body-cards">
+                    <h2 class="card-h">Economy!</h2>
+                    <p class="card-p">
+                        Greench has a economy system that improves each day, by adding more commands or improving the ones that already exist.
+                        <br><br>
+                        <i style="font-size: 18px;">And we are open to suggestions.</i>
+                    </p>
+                </div>
+                <div class="body-cards">
+                    <h2 class="card-h">Information!</h2>
+                    <p class="card-p">
+                        Be able to see the server information or a user information with just one command!
+                        <br><br>
+                        <i style="font-size: 18px;">And we are open to suggestions.</i>
+                    </p>
+                </div>
+
+                <div class="body-cards">
+                    <h2 class="card-h">Miscellaneous!</h2>
+                    <p class="card-p">
+                        Why no? Get user avatars, some math or even the bot stats!
+                        <br><br>
+                        <i style="font-size: 18px;">And we are open to suggestions.</i>
+                    </p>
+                </div>
+
+                <div class="body-cards">
+                    <h2 class="card-h">Fun!</h2>
+                    <p class="card-p">
+                        Sadly there are no commands for this category.
+                        <br><br>
+                        <i style="font-size: 18px;">And we are open to suggestions.</i>
+                    </p>
+                </div>
+            </div>
+            <br>
+            <!-- Footer -->
+            <div id="footer">
+                <%- include('partials/footer') -%>
+            </div>
+        </div>
+    </div>
+
+    <div id="no-body" style="display: none;">
+        <h1 style="color: white;">Mobile/Tablet view are not supported for the moment. If you wish this to be enabled, contact with TheGreench.</h1>
+    </div>
+</body>

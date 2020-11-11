@@ -1,0 +1,45 @@
+#container-topNavBar {
+    color: white !important;
+    background-color: #2c2c2c !important;
+    border-bottom: 3px solid #f5eded;
+    border-radius: 0px 0px 2px 2px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#brand-sep {    
+    width: 2px !important;
+    background-color:#ffffff !important;
+    position: absolute !important;
+}
+.navbar-brand {
+    font-size: 25px !important;
+    color: white !important;
+    cursor: context-menu;;
+}
+.nav-link {
+    color: white !important;
+    font-size: 17px;
+    border-radius: 6px 6px 6px 6px;
+    transition: .2s;
+}
+.nav-link:hover {
+    border-radius: 6px 6px 6px 6px;
+    background-color: #00c5f6 !important;
+    border-color: none;
+}
+#active {
+    border-radius: 6px 6px 6px 6px;
+    color: #2c2c2c !important;
+    background-color: #f5eded !important;
+    border-color: none;
+    font-weight: bold;
+}
+#topNavButton {
+    border-color: #00c5f6 !important;
+    color: #00c5f6 !important;
+}
+#topNavButton:hover {
+    background-color: #00c5f6 !important;
+    color: white !important;
+}

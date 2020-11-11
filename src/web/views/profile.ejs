@@ -1,0 +1,21 @@
+<%- include('partials/header') -%>
+<link rel="stylesheet" href="/stylesheets/dashboard.css">
+
+<body>
+    <!-- Main Container-->
+    <div id="main-container">
+        <!-- Navbar -->
+        <%- include('partials/nav') -%>
+
+        <!-- Body -->
+        <div id="body">
+            <div class="header">
+                <img src="<%= avatarURL %>" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="no-body" style="display: none;">
+        <h1 style="color: white;">Mobile/Tablet view are not supported for the moment. If you wish this to be enabled, contact with TheGreench.</h1>
+    </div>
+</body>
