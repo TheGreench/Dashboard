@@ -1,0 +1,45 @@
+/* eslint-disable no-undef */
+const { config } = require('dotenv');
+config({ path: __dirname + '/.env' });
+const p = process.env;
+
+module.exports = {
+	token: 'client_token,
+	prefix: 'prefix',
+	ownerID: 'owner_id',
+	clientID: 'client_id',
+	clientSecret: 'client_scecret,
+	publicKey: 'client_publick_key',
+	mongo: 'mongo_db_link,
+	permsByNumber: [
+		// 0
+		'Everyone',
+		// 1
+		'MANAGE_MESSAGES',
+		// 2
+		'MANAGE_MESSAGES',
+		// 3
+		'MANAGE_MESSAGES',
+		// 4
+		'MANAGE_MESSAGES',
+		// 5
+		'BAN_MEMBERS',
+		// 6
+		'ADMINISTRATOR',
+		// 7 - 12
+		'N/A',
+		'N/A',
+		'N/A',
+		'N/A',
+		// 11
+		'MANAGE_G_GUILDS',
+		// 12
+		'G_ADD_S_ITEMS',
+		// 13
+		'SYSTEM_TECH',
+		// 14
+		'SYSTEM_ADMIN',
+		// 15
+		'OWNER',
+	],
+};
