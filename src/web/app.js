@@ -5,25 +5,22 @@ const Str = require('@supercharge/strings');
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || process.env.PORT2;
+// const PORT = process.env.PORT2;
 const session = require('express-session');
 const passport = require('passport');
 const path = require('path');
 const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
-const db = require('../utils/db.js');
 
 // Routes
 const authRoute = require('./routes/auth');
 const dashboardRoute = require('./routes/dashboard');
-const profileRoute = require('./routes/profile');
 /*
-const homeRoute = require('./routes/home');
-const guildRoute = require('./routes/servers');*/
+const homeRoute = require('./routes/home');;*/
 
 // Discord Session
-const secretT = Str.random(80);
 app.use(session({
-	secret: secretT,
+	secret: process.env.SECRET_COOKIE,
 	cookie: {
 		maxAge: 60000 * 60 * 24,
 	},
@@ -46,19 +43,32 @@ app.use(passport.session());
 // Middleware Routes
 app.use('/auth', authRoute);
 app.use('/dashboard', dashboardRoute);
-app.use('/profile', profileRoute);
 /*
-app.use('/home', homeRoute);
-app.use('/servers', guildRoute);*/
+app.use('/home', homeRoute);*/
 
 app.get('/', isAuthorized, (req, res) => {
 	res.render('index');
+});
+app.get('/forbidden', (req, res) => {
+	res.sendStatus(403);
+});
+app.get('/404', (req, res) => {
+	res.sendStatus(404);
+});
+app.get('/400', (req, res) => {
+	res.sendStatus(400);
+});
+app.get('/discord', (req, res) => {
+	res.redirect('https://discord.gg/mpZvhJQ');
+});
+app.get('/invite', (req, res) => {
+	res.redirect('https://discord.com/api/oauth2/authorize?client_id=717709652409712690&permissions=8&scope=bot');
 });
 
 function isAuthorized(req, res, next, client) {
 	if(req.user) {
 		console.log('[WEB] User is logged in.');
-		res.redirect('/');
+		res.redirect('/dashboard');
 	}
 	else {
 		console.log('[WEB] User is not logged in.');
@@ -67,4 +77,3 @@ function isAuthorized(req, res, next, client) {
 }
 
 app.listen(PORT, () => console.log(`[WEB] Now listening to requests on port ${PORT}`));
-db.then(() => console.log('[#] Connected to MongoDB.')).catch(err => console.log(err));

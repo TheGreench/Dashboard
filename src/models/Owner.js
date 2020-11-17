@@ -9,4 +9,4 @@ const CLSchema = new mongoose.Schema({
 }, {
 	timestamps: { currentTime: () => Date.now() },
 });
-const Owner = module.exports = mongoose.model('CL', CLSchema);
+module.exports = mongoose.model('CL', CLSchema);

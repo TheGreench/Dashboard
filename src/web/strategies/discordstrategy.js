@@ -1,10 +1,10 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 const DiscordStrategy = require('passport-discord').Strategy;
 const passport = require('passport');
 const DiscordUser = require('../../models/Account.js');
 require('dotenv').config();
 const userGuilds = new Map();
-const fetch = require('node-fetch');
 
 passport.serializeUser((user, done) => {
 	console.log('[WEB] Serialize');
@@ -27,43 +27,20 @@ passport.use(
 		try {
 			const user = await DiscordUser.findOne({ discordID: profile.id });
 
-			let formattedData;
-
-			if (!userGuilds.has(user.discordID)) {
-				const data = await fetch('https://discord.com/api/v8/users/@me/guilds', {
-					headers: {
-						Authorization: `Bearer ${accessToken}`,
-					},
-				});
-
-				formattedData = await data.json();
-
-				const newGuilds = [];
-
-				for (const guild of formattedData) {
-					newGuilds.push({
-						id: guild.id,
-						name: guild.name,
-						permissions: guild.permissions,
-					});
-				}
-
-				userGuilds.set(user.discordID, newGuilds);
-			}
-			else {
-				formattedData = userGuilds.get(user.discordID);
-			}
-			console.log(formattedData);
-			console.log(userGuilds);
-
 			if(user) {
 				console.log('[WEB] User has an Account.');
 				await user.updateOne({
 					username: profile.username,
-					avatarURL: profile.avatarURL,
+					discriminator: profile.discriminator,
+					avatarURL: `https://cdn.discordapp.com/avatars/${profile.id}/${profile.avatar}.png`,
 					coins: user.coins + 2,
 					fragments: user.fragments + 8,
 					xp: user.xp + 2,
+					account_created: {
+						accessToken,
+						refreshToken,
+					},
+					guilds: profile.guilds,
 				});
 				done(null, user);
 			}
@@ -72,7 +49,7 @@ passport.use(
 				const newUser = await DiscordUser.create({
 					discordID: profile.id,
 					username: profile.username,
-					avatarURL: profile.avatarURL,
+					avatarURL: `https://cdn.discordapp.com/avatars/${profile.id}/${profile.avatar}.png`,
 					discriminator: profile.discriminator,
 					blacklisted: false,
 					coins: 200,
@@ -96,12 +73,15 @@ passport.use(
 						guild_name: null,
 						channel_name: null,
 						with: 'Website',
+						accessToken,
+						refreshToken,
 					},
 					assets: {
 						boosters: [],
 						houses: [],
 						pets: [],
 					},
+					guilds: profile.guilds,
 				});
 				const savedUser = await newUser.save();
 				done(null, savedUser);

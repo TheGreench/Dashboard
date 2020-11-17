@@ -14,8 +14,11 @@ router.get('/logout', (req, res) => {
 		res.redirect('/');
 	}
 	else {
-		res.redirect('/');
+		res.redirect('/dashboard');
 	}
+});
+router.get('/forbidden', (req, res) => {
+	res.sendStatus(403);
 });
 
 module.exports = router;

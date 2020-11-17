@@ -20,4 +20,4 @@ const ShopSchema = new mongoose.Schema({
 }, {
 	timestamps: { currentTime: () => Date.now() },
 });
-const DiscordUser = module.exports = mongoose.model('Shop', ShopSchema);
+module.exports = mongoose.model('Shop', ShopSchema);
