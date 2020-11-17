@@ -19,9 +19,9 @@ passport.deserializeUser(async (id, done) => {
 
 passport.use(
 	new DiscordStrategy({
-		clientID: process.env.CLIENT_ID,
-		clientSecret: process.env.CLIENT_SECRET,
-		callbackURL: process.env.CLIENT_REDIRECT,
+		clientID: 'CLIENT_ID',
+		clientSecret: 'CLIENT_SECRET',
+		callbackURL: 'CLIENT_REDIRECT',
 		scope: ['identify', 'guilds', 'guilds.join'],
 	}, async (accessToken, refreshToken, profile, done) => {
 		try {
