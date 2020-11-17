@@ -56,7 +56,11 @@ const GuildSchema = new mongoose.Schema({
 	other: {
 		messages: Number,
 	},
+	welcomeStuff: {
+		description: String,
+		mentionUser: Boolean,
+	},
 }, {
 	timestamps: { currentTime: () => Date.now() },
 });
-const Guild = module.exports = mongoose.model('Guild', GuildSchema);
+module.exports = mongoose.model('Guild', GuildSchema);

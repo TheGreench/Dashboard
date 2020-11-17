@@ -1,0 +1,16 @@
+<% let format = ".png" || ".gif" || ".jpg" || ".jpeg"; %>
+<div class="paddCardsCont">
+  <div id="box-card">
+    <div class="image-box">
+      <div>  
+        <img src="//cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon %><% format %>" alt="Discord Guild Icon - Server Icon">
+      </div>
+    </div>
+    <div class="details">
+        <h4 id="h3"><a><%= guild.name %></a></h4>
+        <form action="/dashboard/guilds/<%= guild.id %>">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="topNavButton" type="submit">Manage the Server</button>
+        </form>
+    </div>
+  </div>
+</div>

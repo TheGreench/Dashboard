@@ -10,4 +10,4 @@ const BotSchema = new mongoose.Schema({
 }, {
 	timestamps: { currentTime: () => Date.now() },
 });
-const Bot = module.exports = mongoose.model('Bot', BotSchema);
+module.exports = mongoose.model('Bot', BotSchema);

@@ -6,7 +6,7 @@
     <div id="main-container">
         <!-- Navbar -->
         <div id="container-topNavBar">
-            <nav class="navbar navbar-expand-lg" id="topNavBar">
+            <nav class="navbar navbar-expand-lg container" id="topNavBar">
                 <a class="navbar-brand" href="#">Greench Pre-Alpha&nbsp;&nbsp;<span id="brand-sep">&nbsp;</span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -16,13 +16,13 @@
                     <ul class="navbar-nav mr-auto">
                         &nbsp;
                         <li class="nav-item active">
-                            <a class="nav-link" href="/">
+                            <a class="nav-link" href="/" id="active">
                                 <i class="fas fa-home"></i>&nbsp; Home <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         &nbsp;&nbsp;
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/invite">
                                 <i class="fas fa-plus"></i>&nbsp; Invite Me
                             </a>
                         </li>
@@ -34,20 +34,20 @@
                         </li>
                         &nbsp;&nbsp;
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/discord">
                                 <i class="fab fa-discord"></i>&nbsp; Discord
                             </a>
                         </li>
                         &nbsp;&nbsp;
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/auth/redirect">
                                 <i class="fas fa-cogs"></i>&nbsp; Dashboard
                             </a>
                         </li>
                     </ul>
                     <!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><i class="fas fa-sign-in-alt"></i>&nbsp;Alpha Test</button> -->
                     &nbsp;&nbsp;
-                    <form class="form-inline my-2 my-lg-0" action="/auth">
+                    <form class="form-inline my-2 my-lg-0" action="/auth/redirect">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="topNavButton"><i class="fas fa-sign-in-alt"></i>&nbsp;LOGIN</button>
                     </form>
                 </div>
@@ -55,7 +55,7 @@
         </div>
 
         <div id="body">
-            <div id="main-body">
+            <div id="main-body" class="container">
                 <p>
                     <br>
                     <h1 style="font-weight: bold;">Your Community Platform for <span style="color: #00c5f6;">Greench Pre-Alpha</span></h1>

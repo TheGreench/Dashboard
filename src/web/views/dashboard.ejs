@@ -8,8 +8,26 @@
         <%- include('partials/nav') -%>
 
         <!-- Body -->
-        <div id="body">
-
+        <div id="body" class="container">
+            <div class="dash-header">
+                    <h1>Welcome to the Dashboard!</h1>
+            </div>
+            <br>
+            <div id="server-cards">
+                <h3 class="dash-h3">Choose a Server to Manage!</h3>
+                <div class="s-cards-start">
+                    <div class="cards-final">
+                        <% guilds.forEach(guild => { %>
+                            <%- include('partials/guild', { guild, permissions }) -%>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div id="footer">
+            <%- include('partials/footer') -%>
         </div>
     </div>
 

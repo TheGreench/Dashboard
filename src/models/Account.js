@@ -30,13 +30,17 @@ const UserSchema = new mongoose.Schema({
 		channel_id: String,
 		channel_name: String,
 		with: String,
+		accessToken: String,
+		refreshToken: String,
 	},
 	assets: {
 		booster: Array,
 		houses: Array,
 		pets: Array,
 	},
+	guilds: Array,
 }, {
 	timestamps: { currentTime: () => Date.now() },
 });
-const DiscordUser = module.exports = mongoose.model('User', UserSchema);
+
+module.exports = mongoose.model('User', UserSchema);

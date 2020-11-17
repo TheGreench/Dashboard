@@ -39,7 +39,15 @@
     border-color: #00c5f6 !important;
     color: #00c5f6 !important;
 }
+#topNavButtonTwo {
+    border-color: #f02119 !important;
+    color: #f02119 !important;
+}
 #topNavButton:hover {
     background-color: #00c5f6 !important;
+    color: white !important;
+}
+#topNavButtonTwo:hover {
+    background-color: #f02119 !important;
     color: white !important;
 }
