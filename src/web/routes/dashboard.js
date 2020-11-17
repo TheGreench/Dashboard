@@ -4,7 +4,7 @@ const router = require('express').Router();
 const { getPermissions } = require('../utils/utils.js');
 const profileDB = require('../../models/Account.js');
 const guildDB = require('../../models/Guild.js');
-const settings = require('../../config/config.js');
+const settings = require('../../config.js');
 
 function isAuthorized(req, res, next) {
 	if(req.user) {
