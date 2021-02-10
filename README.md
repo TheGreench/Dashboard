@@ -1,3 +1,3 @@
 # Greench's Dashboard
 
-This is Under Development
+Dashboard is in the bots repository.
